@@ -110,6 +110,16 @@ class ControllerApp(App, threading.Thread):
         return self.controller
 
 
+   def on_pause(self):
+      # Here you can save data if needed
+      return True
+
+
+   def on_resume(self):
+      # Here you can check if any data needs replacing (usually nothing)
+      pass
+
+
 from RedmineManager import RedmineManager
 from TrelloManager import TrelloManager
 import trello
