@@ -3,8 +3,8 @@ import TrelloManager
 import os
 
 home = os.path.expanduser("~")
-ConfigFileString = os.path.join(home, "RedmineTrelloConfiguration2.cfg")
-DefaultAPIKeyFileString = os.path.join(home, "RedmineTrelloAPIKeyFile2.cfg")
+ConfigFileString = os.path.join(home, "/sdcard/mytest/RedmineTrelloConfiguration2.cfg")
+DefaultAPIKeyFileString = os.path.join(home, "/sdcard/mytest/RedmineTrelloAPIKeyFile2.cfg")
 
 
 # this class is reading and writing config-files for the API-Keys.
@@ -59,7 +59,7 @@ class ConfigManager:
         print "experimental!! do NOT use on any productive management system. you have been warned."
 
         print "enter location for API-Key file [", DefaultAPIKeyFileString, "] : "
-        APIFileString = raw_input()
+        APIFileString = "" #raw_input() # <-- obviously not working on android
         if APIFileString == "":
             APIFileString = DefaultAPIKeyFileString
         configuration = {"APIKeyFile": APIFileString}

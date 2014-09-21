@@ -9,6 +9,11 @@ from kivy.properties import ObjectProperty, StringProperty
 
 import threading
 
+from RedmineManager import RedmineManager
+from TrelloManager import TrelloManager
+import trello
+import ConfigManager
+
 #http://kivy.org/planet/page/3/
 class Controller(FloatLayout):
     '''Create a controller that receives a custom widget from the kv lang file.
@@ -109,21 +114,16 @@ class ControllerApp(App, threading.Thread):
         self.controller.get_issues()
         return self.controller
 
+    def on_pause(self):
+        # Here you can save data if needed
+        return True
 
-   def on_pause(self):
-      # Here you can save data if needed
-      return True
-
-
-   def on_resume(self):
-      # Here you can check if any data needs replacing (usually nothing)
-      pass
+    def on_resume(self):
+        # Here you can check if any data needs replacing (usually nothing)
+        pass
 
 
-from RedmineManager import RedmineManager
-from TrelloManager import TrelloManager
-import trello
-import ConfigManager
+
 
 if __name__ == '__main__':
 

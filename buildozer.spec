@@ -1,13 +1,13 @@
 [app]
 
 # (str) Title of your application
-title = My Application
+title = TimeTracker
 
 # (str) Package name
-package.name = myapp
+package.name = timetracker
 
 # (str) Package domain (needed for android/ios packaging)
-package.domain = org.test
+package.domain = org.test.timetracker
 
 # (str) Source code where the main.py live
 source.dir = .
@@ -29,7 +29,7 @@ source.include_exts = py,png,jpg,kv,atlas
 #version.filename = %(source.dir)s/main.py
 
 # (str) Application versioning (method 2)
-version = 1.2.1
+version = 0.0.1
 
 # (list) Application requirements
 requirements = openssl, py-trello, python-redmine, kivy
@@ -55,7 +55,7 @@ fullscreen = 0
 #
 
 # (list) Permissions
-#android.permissions = INTERNET
+android.permissions = INTERNET, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE
 
 # (int) Android API to use
 #android.api = 14
